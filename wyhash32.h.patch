@@ -1,0 +1,13 @@
+diff --git a/wyhash32.h b/wyhash32.h
+index 877ad55..10ebc1d 100644
+--- a/wyhash32.h
++++ b/wyhash32.h
+@@ -10,7 +10,7 @@ static inline unsigned _wyr32(const uint8_t *p) { unsigned v; memcpy(&v, p, 4);
+ #endif
+ static inline unsigned _wyr24(const uint8_t *p, unsigned k) { return (((unsigned)p[0])<<16)|(((unsigned)p[k>>1])<<8)|p[k-1];}
+ static inline void _wymix32(unsigned  *A,  unsigned  *B){
+-  uint64_t  c=*A^0x53c5ca59u;  c*=*B^0x74743c1bu;
++  uint64_t  c=*A+0x53c5ca59u;  c*=*B^0x74743c1bu;
+   *A=(unsigned)c;
+   *B=(unsigned)(c>>32);
+ }
